@@ -43,5 +43,32 @@ class UserModel extends CI_Model
             $query = $this->db->get(); 
             return $query->result(); 
     } 
+     public function user_edit($id)
+    {
+            $condition = array('id' =>$id);
+            $this->db->select('*');
+            $this->db->from('UserDetails');
+            $this->db->where($condition);
+            $query = $this->db->get(); 
+            return $query->result(); 
+    }
+    public function udpate_userDetails($id)
+	{
+		$data = array(
+		 'Name' => $this->input->post('Name'),
+		 'Email' => $this->input->post('Email'),
+		 'Mobile' => $this->input->post('Mobile'),
+		 'Email' => $this->input->post('Email'),
+		 'Gender' => $this->input->post('Gender'),
+		 'Status' => $this->input->post('Status'),
+		);
+		 if ($id == 0) {
+		 	 return $this->db->insert('UserDetails',$data);
+		 }
+		 else {
+		 	$this->db->where('id',$id);
+		 	return $this->db->insert('UserDetails',$data);
+		 }
+	}
 
 }

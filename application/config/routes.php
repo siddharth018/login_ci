@@ -54,5 +54,6 @@ $route['register'] = 'home/register';
 $route['login'] = 'home/index';
 $route['dashboard'] = 'home/dashboard';
 $route['user_list'] = 'home/userDeatilsList';
+$route['udpate_userDetails/(:any)'] = 'home/udpate_userDetails/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

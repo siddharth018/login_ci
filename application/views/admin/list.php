@@ -66,9 +66,15 @@
             <div class="profile-bg"></div>
             <ul class="list-unstyled components">
                 <li>
-                    <a href="dashboard">
+                    <a href="<?php echo base_url(''); ?>dashboard">
                         <i class="fas fa-th-large"></i>
                         Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url(''); ?>user_list">
+                        <i class="fas fa-th-large"></i>
+                        List
                     </a>
                 </li>
                 <li>
@@ -124,7 +130,7 @@
                                 } else {
                                 echo "Inactive";
                             } ?></td>
-                                <td> <a href="">Edit</a> </td>
+                                <td> <a href="<?php echo base_url('home/user_edit'); ?>?id=<?php print_r($userDetails->Id); ?>">Edit</a> </td>
                             </tr>
                             <?php } ?>
                             

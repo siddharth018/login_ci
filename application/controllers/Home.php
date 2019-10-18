@@ -65,10 +65,22 @@ class Home extends CI_Controller {
 		$result['data'] = $this->UserModel->userDeatilsList();
 		$this->load->view('admin/list',$result);
 	}
-	 
+	 public function user_edit()
+    {
+    	$this->logincheck();
+        $id = $_GET['id'];
+        $result['data'] = $this->UserModel->user_edit($id);
+        $this->load->view('admin/user_edit', $result);
+    }
 	 public function logout()
     {
         $this->session->sess_destroy();
         redirect('login');
     }
+    public function udpate_userDetails($id)
+	{
+		$blogs = new UserModel;
+		$blogs->udpate_userDetails($id);
+		redirect(base_url('user_list'));
+	}
 }

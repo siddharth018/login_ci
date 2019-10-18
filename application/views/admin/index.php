@@ -59,16 +59,22 @@
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h1>
-                    <a href="dashboard">Dashboard</a>
+                    <a href="<?php echo base_url(''); ?>dashboard">Dashboard</a>
                 </h1>
                 <span>M</span>
             </div>
             <div class="profile-bg"></div>
             <ul class="list-unstyled components">
                 <li>
-                    <a href="dashboard">
+                    <a href="<?php echo base_url(''); ?>dashboard">
                         <i class="fas fa-th-large"></i>
                         Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url(''); ?>user_list">
+                        <i class="fas fa-th-large"></i>
+                        List
                     </a>
                 </li>
                 <li>
